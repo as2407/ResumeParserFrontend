@@ -23,11 +23,16 @@ export class UploadPdfComponent {
     }
   }
 
-  onSubmit() {
-    // Logic to submit the form
-    console.log("Submitting the form...");
-  }
+  // onSubmit() {
+  //   Logic to submit the form
+  //   console.log("Submitting the form...");
+  // }
+  upload() {
 
+  }
+  discardFile() {
+    this.selectedFile = null;
+  }
   private isValidPdf(file: File): boolean {
     return file.type === 'application/pdf';
   }

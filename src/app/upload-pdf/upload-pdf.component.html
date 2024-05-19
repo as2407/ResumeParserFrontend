@@ -1,47 +1,41 @@
-<!--<body>-->
-<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
-<!--  <div class="card">-->
-<!--    <div class="upload-container">-->
-<!--      <h1 class="heading">Upload Your Resume</h1>-->
-<!--      <p class="description">Select your resume file</p>-->
-<!--      <label for="photo-upload" class="custom-file-upload fas">-->
-<!--        <input id="fileInput" type="file" (change)="onFileSelected($event)" #fileInput>-->
-<!--        <span class="file-upload-text">Choose File</span>-->
-<!--      </label>-->
-<!--      <br>-->
-<!--      <button class="submit-button">Submit</button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--&lt;!&ndash;</div>&ndash;&gt;-->
-<!--</body>-->
-
-<!-- profile-upload.component.html -->
-<!--<div class="card">-->
-<!--  <h1>Profile Upload</h1>-->
-<!--  <label for="photo-upload" class="custom-file-upload fas">-->
-<!--    <div class="img-wrap">-->
-<!--      <img src="https://cdn-icons-png.freepik.com/256/1209/1209920.png?semt=ais_hybrid" alt="Profile Image">-->
-<!--    </div>-->
-<!--  </label>-->
-<!--  <input id="photo-upload" type="file" (change)="onFileSelected($event)" #fileInput>-->
-<!--  <button class="submit-button">Submit</button>-->
-<!--</div>-->
-
-
-<!-- profile-upload.component.html -->
-<body>
-<div class="card">
-  <h1>Upload your RESUME</h1>
-  <label for= "pdf-upload" class="custom-file-upload fas">
-    <div class="img-wrap">
-      <img src="https://cdn-icons-png.freepik.com/256/1209/1209920.png?semt=ais_hybrid" alt="Profile Image">
+<div class="file-upload-container">
+  <div class="card container file-upload">
+    <div class="card-body">
+      <div *ngIf="!selectedFile">
+        <div class="row">
+          <div class="col-12">
+            <label>
+              <input id="pdf-upload" type="file" (change)="onFileSelected($event)">
+              <img class="upload-icon" src="https://previews.123rf.com/images/tmricons/tmricons1707/tmricons170700061/81206055-upload-file-icon-file-document-symbol-button-document-arrow.jpg" alt="Attach a file here">
+            </label>
+          </div>
+          <div class="col-12">
+            <p>Browse a pdf file or drop it here</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="selectedFile">
+        <div class="row align-items-center">
+          <div class="col-8">
+            <div class="m-0 p-0">{{ selectedFile.name }}</div>
+          </div>
+          <div class="col-4 d-flex justify-content-end">
+            <button type="button" class="btn-close cross p-0 m-0" aria-label="Close" (click)="discardFile()">X</button>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-center">
+          <button class="btn btn-success" [disabled]="!selectedFile" (click)="upload() ">
+            Submit
+          </button>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12">
+          <p>File data is used locally and never leaves your browser</p>
+        </div>
+      </div>
     </div>
-  </label>
-  <input id="pdf-upload" type="file" (change)="onFileSelected($event)" #fileInput>
-  <button class="submit-button">Submit</button>
+  </div>
 </div>
-
-
-</body>
-
-
