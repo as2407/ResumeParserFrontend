@@ -1,12 +1,12 @@
-<div class="file-upload-container">
-  <div class="card container file-upload">
+<div class="file-upload-container mt-5">
+  <div class="card container dotted-border file-upload">
     <div class="card-body">
       <div *ngIf="!selectedFile">
         <div class="row">
           <div class="col-12">
             <label>
               <input id="pdf-upload" type="file" (change)="onFileSelected($event)">
-              <img class="upload-icon" src="https://previews.123rf.com/images/tmricons/tmricons1707/tmricons170700061/81206055-upload-file-icon-file-document-symbol-button-document-arrow.jpg" alt="Attach a file here">
+              <img class="upload-icon" src="assets/upload.png" alt="Attach a file here">
             </label>
           </div>
           <div class="col-12">
@@ -31,7 +31,7 @@
       </div>
       <div class="row mt-3">
         <div class="col-12">
-          <p>Import data from your resume</p>
+          <h5 class="gray-color">Import resume to get started</h5>
         </div>
       </div>
     </div>

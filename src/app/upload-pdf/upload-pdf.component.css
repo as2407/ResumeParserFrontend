@@ -21,3 +21,12 @@ label.btn {
   width: 1000%;
   height: 1000%;
  }
+
+.dotted-border {
+  border-style: dashed;
+  border-width: medium;
+}
+
+.gray-color {
+  color: #505050;
+}
