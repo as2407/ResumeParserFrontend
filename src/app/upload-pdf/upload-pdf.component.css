@@ -12,12 +12,14 @@
 .upload-icon {
   width: 50px;
   height: 50px;
+}
+.inline {
+  display: inline-flex;
+}
+.pointer {
   cursor: pointer;
 }
 
-label.btn {
-  cursor: pointer;
-}
 #cross {
   width: 1000%;
   height: 1000%;
@@ -28,8 +30,8 @@ label.btn {
   border-width: medium;
 }
 
-.half-width {
-  max-width: 50%;
+.restrict-width-60 {
+  max-width: 60%;
 }
 
 .center {
@@ -37,3 +39,4 @@ label.btn {
   align-items: center;
   text-align: center;
 }
+
