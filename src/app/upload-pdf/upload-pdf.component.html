@@ -1,6 +1,9 @@
-<div class="file-upload-container mt-5">
-  <div class="card container dotted-border file-upload">
-    <div class="card-body">
+<div class="container mt-5 half-width">
+  <div class="row mt-3 mb-3">
+      <h5 class="center gray-color">Import resume to get started</h5>
+  </div>
+  <div class="row card dotted-border center" >
+    <div class="card-body" >
       <div *ngIf="!selectedFile">
         <div class="row">
           <div class="col-12">
@@ -15,7 +18,7 @@
         </div>
       </div>
       <div *ngIf="selectedFile">
-        <div class="row align-items-center">
+        <div class="row">
           <div class="col-12">
             {{ selectedFile.name }}
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="discardFile()"></button>
@@ -27,11 +30,6 @@
           <button class="btn btn-primary" [disabled]="!selectedFile" (click)="upload() ">
             Submit
           </button>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12">
-          <h5 class="gray-color">Import resume to get started</h5>
         </div>
       </div>
     </div>

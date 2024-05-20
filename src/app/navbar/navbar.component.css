@@ -1,0 +1,16 @@
+.move-left {
+  margin-left: auto;
+}
+
+.nav-item-bg {
+  color: white;
+}
+
+.navbar {
+  box-shadow: 1px 1px 3px #e5e5e5;
+}
+
+.nav-item-bg:hover {
+  background: #e5e5e5;
+  border-radius: 5px;
+}

@@ -2,6 +2,7 @@
 
 .file-upload {
   text-align: center;
+  max-width: 50%;
 }
 
 #pdf-upload {
@@ -27,6 +28,12 @@ label.btn {
   border-width: medium;
 }
 
-.gray-color {
-  color: #505050;
+.half-width {
+  max-width: 50%;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

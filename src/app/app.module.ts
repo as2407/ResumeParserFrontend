@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UploadPdfComponent } from './upload-pdf/upload-pdf.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadPdfComponent
+    UploadPdfComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule
