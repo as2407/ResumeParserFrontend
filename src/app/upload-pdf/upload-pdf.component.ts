@@ -30,10 +30,20 @@ export class UploadPdfComponent {
   upload() {
 
   }
+
   discardFile() {
     this.selectedFile = null;
   }
   private isValidPdf(file: File): boolean {
     return file.type === 'application/pdf';
+  }
+
+  onFileDropped(files: Array<any>) {
+    const file: File = files[0]
+    if (this.isValidPdf(file)) {
+      this.selectedFile = file;
+    } else {
+      console.error("Please select a PDF file.");
+    }
   }
 }

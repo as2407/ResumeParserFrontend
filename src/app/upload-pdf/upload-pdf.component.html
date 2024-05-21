@@ -1,8 +1,8 @@
-<div class="container mt-5 restrict-width-60">
+<div class="container mt-5 ps-5 pe-5">
   <div class="row mt-3 mb-3">
       <h5 class="center gray-color">Import resume to get started</h5>
   </div>
-  <div class="row card dotted-border center" >
+  <div class="row dotted-border center card" appDragNDrop (fileDropped)="onFileDropped($event)">
     <div class="card-body" >
       <div *ngIf="!selectedFile">
         <div class="row mt-5">
@@ -18,14 +18,14 @@
         </div>
       </div>
       <div *ngIf="selectedFile">
-        <div class="row center mt-5">
+        <div class="row mt-5">
           <div class="col-12">
             <img class="upload-icon" src="assets/pdf.png" alt="Attach a file here">
           </div>
           <div class="col-12 mt-2">
             <div class="inline">
               <p>{{ selectedFile.name }}</p>
-              <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close" (click)="discardFile()"></button>
+              <button type="button" class="btn-close ms-2" aria-label="Close" (click)="discardFile()"></button>
             </div>
           </div>
         </div>

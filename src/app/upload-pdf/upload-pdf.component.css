@@ -20,18 +20,9 @@
   cursor: pointer;
 }
 
-#cross {
-  width: 1000%;
-  height: 1000%;
- }
-
 .dotted-border {
   border-style: dashed;
   border-width: medium;
-}
-
-.restrict-width-60 {
-  max-width: 60%;
 }
 
 .center {
