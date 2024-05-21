@@ -12,21 +12,21 @@
               <img class="upload-icon pointer" src="assets/upload.png" alt="Attach a file here">
             </label>
           </div>
-          <div class="col-12">
+          <div class="col-12 mt-2">
             <p>Browse a pdf file or drop it here</p>
           </div>
         </div>
       </div>
       <div *ngIf="selectedFile">
-        <div class="row">
+        <div class="row center mt-5">
           <div class="col-12">
             <img class="upload-icon" src="assets/pdf.png" alt="Attach a file here">
           </div>
-          <div class="col-12">
-            <span class="inline">
+          <div class="col-12 mt-2">
+            <div class="inline">
               <p>{{ selectedFile.name }}</p>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="discardFile()"></button>
-            </span>
+              <button type="button" class="btn-close ms-2" data-bs-dismiss="modal" aria-label="Close" (click)="discardFile()"></button>
+            </div>
           </div>
         </div>
       </div>
