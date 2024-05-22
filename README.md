@@ -1,27 +1,16 @@
-# ANGULAR
+# Resume Parser Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
+This is the Angular based frontend of the Resume Parser Project.
+The backend can be found [here](https://github.com/trinonandi/ResumeParser).
 
-## Development server
+The app is hosted on Vercel and can be accessed via [this](https://resume-parser-ai.vercel.app/) link.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Deploy
 
-## Code scaffolding
+Deployments can be done only from the main branch of the [forked project](https://github.com/trinonandi/ResumeParserFrontend).
+Any updates from the main branch of [this](https://github.com/as2407/ResumeParserFrontend) must be synced with the forked project's main branch.
+Refer to [this](https://vercel.com/guides/deploying-angular-with-vercel) vercel documentation for installing Vercel CLI tool.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Once Vercel CLI is installed, the commands to deploy is:
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+`vercel --prod`
