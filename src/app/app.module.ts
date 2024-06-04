@@ -6,6 +6,7 @@ import { UploadPdfComponent } from './upload-pdf/upload-pdf.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DragNDropDirective } from './directives/drag-n-drop.directive';
 import { CommonModule } from '@angular/common';
+import {MarkdownComponent} from "ngx-markdown";
 @NgModule({
   declarations: [
     AppComponent,
