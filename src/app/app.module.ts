@@ -5,16 +5,17 @@ import { AppComponent } from './app.component';
 import { UploadPdfComponent } from './upload-pdf/upload-pdf.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DragNDropDirective } from './directives/drag-n-drop.directive';
-
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
     UploadPdfComponent,
     NavbarComponent,
-    DragNDropDirective
+    DragNDropDirective,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
