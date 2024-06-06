@@ -31,3 +31,8 @@
   text-align: center;
 }
 
+.info-bg {
+  background-color: rgba(179, 179, 255, 0.18);
+  border-style: none;
+}
+

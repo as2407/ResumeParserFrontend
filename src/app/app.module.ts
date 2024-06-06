@@ -6,7 +6,13 @@ import { UploadPdfComponent } from './upload-pdf/upload-pdf.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DragNDropDirective } from './directives/drag-n-drop.directive';
 import { CommonModule } from '@angular/common';
-import {MarkdownComponent} from "ngx-markdown";
+import { MarkdownModule } from "ngx-markdown";
+import { provideHttpClient } from "@angular/common/http";
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,9 +22,15 @@ import {MarkdownComponent} from "ngx-markdown";
   ],
   imports: [
     BrowserModule,
-    CommonModule
+    CommonModule,
+    MarkdownModule.forRoot(),
+    MatProgressSpinnerModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    provideHttpClient(),
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

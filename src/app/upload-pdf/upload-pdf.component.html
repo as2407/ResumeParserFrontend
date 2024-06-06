@@ -1,8 +1,8 @@
-<div class="container mt-5 ps-5 pe-5">
+<div class="container mt-5 ps-5 pe-5" *ngIf="markdownContent.length === 0">
   <div class="row mt-3 mb-3">
       <h5 class="center gray-color">Import resume to get started</h5>
   </div>
-  <div class="row dotted-border center card" appDragNDrop (fileDropped)="onFileDropped($event)">
+  <div class="row dotted-border center card " appDragNDrop (fileDropped)="onFileDropped($event)">
     <div class="card-body" >
       <div *ngIf="!selectedFile">
         <div class="row mt-5">
@@ -33,10 +33,65 @@
       <div class="row mt-5 mb-3">
         <div class="col-12 d-flex justify-content-center">
           <button class="btn btn-primary" [disabled]="!selectedFile" (click)="upload() ">
-            Submit
+            {{ this.parsing ? 'Parsing...' : 'Parse'}}
+            <span *ngIf="this.parsing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
           </button>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="row mt-5 gray-color card pt-5 ps-5 pe-5 pb-5 info-bg">
+    <h5 class="center gray-color mb-3">How it works</h5>
+    <h6 class="center mb-5">Following steps will be performed by the application</h6>
+    <ul class="ms-3 me-3">
+      <li>First, the resume will be uploaded to our server</li>
+      <li>The server will extract critical information from the resume using a Python library called PyMuPDF
+        <a href="https://pymupdf.readthedocs.io/en/latest/tutorial.html">[Ref]</a>
+      </li>
+      <li>Using NLP based scoring system, the extracted data will be then assigned with text styles and tags. This is to emphasize the heading, subheading and other important information from the resume</li>
+      <li>This styled data will be displayed to the user in an editable Markdown format</li>
+      <li>The parsed data may contain errors and hence the user will be provided with an opportunity to edit the content before feeding it to the LLM </li>
+      <li>Additionally, the user might be asked to provide an OpenAI API key to activate the LLM. Please follow
+        <a href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key">this link</a> to create an API key
+      </li>
+      <li>Once the user feeds the data to the LLM, an interactive chat window will be activated</li>
+      <li>The LLM will use the context provided by the parsed resume data to answer questions from the user</li>
+    </ul>
+  </div>
 </div>
+
+<div class="container gray-color mt-5 ps-5 pe-5 mb-5" *ngIf="markdownContent.length > 0" >
+
+    <div class="center row mt-5">
+      <div class="col-12">
+        <img class="upload-icon" src="assets/pdf.png" alt="Attach a file here">
+      </div>
+      <div class="col-12 mt-2">
+        <div class="inline">
+          <p>{{ selectedFile?.name }}</p>
+          <button type="button" class="btn-close ms-2" aria-label="Close" (click)="discardFile()"></button>
+        </div>
+      </div>
+      <p>Parsed data may contain errors. Please verify before passing to the LLM</p>
+
+    </div>
+
+  <div class="container mt-5">
+    <div *ngIf="!editable">
+      <div class="d-flex" >
+        <button class="btn btn-outline-secondary" (click)="setContentEdiatable()">Edit Markdown</button>
+        <input type="password" [(ngModel)]="apiKey" placeholder="API Key for OpenAI" class="col-2 form-control" style="width: 20%;margin-left: auto" required>
+        <button class="ms-3 btn btn-primary" style="margin-left: auto">Submit</button>
+      </div>
+      <div markdown class="mt-3" [data]="markdownContent" ></div>
+    </div >
+    <div *ngIf="editable">
+      <button class="btn btn-outline-success"  (click)="saveEditedContent()">Save</button>
+      <textarea class="form-control mt-3" rows="50" cols="70" [(ngModel)]="markdownContent"></textarea>
+    </div>
+  </div>
+
+
+</div>
+
